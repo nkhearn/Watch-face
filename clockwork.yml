@@ -1,0 +1,11 @@
+name: SimpleDigital
+version: 1.0.0
+description: ""
+watchFaceFormatVersion: 1
+dependencies:
+  xml-preprocessor:
+    version: main
+    url: https://github.com/Turtlepaw/xml-preprocessor.git
+  example-ui-pkg:
+    version: main
+    url: https://github.com/WearOSCommunity/example-ui-pkg.git

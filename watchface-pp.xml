@@ -1,0 +1,21 @@
+<?xml version="1.0"?><!--
+    Licensed under the Apache License, Version 2.0.
+    https://www.apache.org/licenses/LICENSE-2.0
+-->
+<WatchFace height="450" width="450">
+    <Define>
+        COLORS = {
+        "white": "#ffffffff",
+        "background": "#ff000000",
+        }
+    </Define>
+
+    <Metadata key="CLOCK_TYPE" value="DIGITAL" />
+    <Metadata key="PREVIEW_TIME" value="10:08:32" />
+
+    <Scene backgroundColor="{COLORS['background']}">
+        <Group width="450" height="200" x="-50" y="170" name="TextGroup">
+            <Import href="packages/example-ui-pkg/text.xml" />
+        </Group>
+    </Scene>
+</WatchFace>

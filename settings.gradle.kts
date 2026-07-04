@@ -28,5 +28,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SimpleDigital"
-include(":watchface")
+rootProject.name = "doomguy"
+include(":doomguy")

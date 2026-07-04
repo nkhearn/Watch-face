@@ -71,7 +71,7 @@
                     <Expression name="is_healthy">[BATTERY_PERCENT] >= 80</Expression>
                 </Expressions>
                 <Compare expression="is_healthy">
-                    <PartImage x="0" y="20" width="150" height="150" resource="doom_healthy" />
+                    <PartImage x="0" y="20" width="150" height="150" resource="@drawable/doom_healthy" />
                 </Compare>
             </Condition>
             <!-- 50-80% -->
@@ -80,7 +80,7 @@
                     <Expression name="is_hurt">[BATTERY_PERCENT] >= 50 &amp;&amp; [BATTERY_PERCENT] &lt; 80</Expression>
                 </Expressions>
                 <Compare expression="is_hurt">
-                    <PartImage x="0" y="20" width="150" height="150" resource="doom_hurt" />
+                    <PartImage x="0" y="20" width="150" height="150" resource="@drawable/doom_hurt" />
                 </Compare>
             </Condition>
             <!-- 20-50% -->
@@ -89,7 +89,7 @@
                     <Expression name="is_dying">[BATTERY_PERCENT] >= 20 &amp;&amp; [BATTERY_PERCENT] &lt; 50</Expression>
                 </Expressions>
                 <Compare expression="is_dying">
-                    <PartImage x="0" y="20" width="150" height="150" resource="doom_dying" />
+                    <PartImage x="0" y="20" width="150" height="150" resource="@drawable/doom_dying" />
                 </Compare>
             </Condition>
             <!-- 0-20% -->
@@ -98,7 +98,7 @@
                     <Expression name="is_dead">[BATTERY_PERCENT] &lt; 20</Expression>
                 </Expressions>
                 <Compare expression="is_dead">
-                    <PartImage x="0" y="20" width="150" height="150" resource="doom_dead" />
+                    <PartImage x="0" y="20" width="150" height="150" resource="@drawable/doom_dead" />
                 </Compare>
             </Condition>
         </Group>

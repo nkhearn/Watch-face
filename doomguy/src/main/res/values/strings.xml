@@ -15,6 +15,6 @@
     limitations under the License.
 -->
 <resources>
-    <string name="watch_face_name">Simple Digital</string>
+    <string name="watch_face_name">doomguy</string>
     <string name="greeting">Hello, world!</string>
 </resources>

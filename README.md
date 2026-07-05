@@ -1,4 +1,4 @@
-# Doomguy Watch Face Template
+# doomguy Watch Face
 
 Template using [`example-ui-pkg`](https://github.com/WearOSCommunity/example-ui-pkg), [XML Preprocessor](https://github.com/gondwanasoft/xml-preprocessor), and [Clockwork](https://clockwork-pkg.pages.dev/)
 

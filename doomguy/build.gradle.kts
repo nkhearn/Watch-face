@@ -19,11 +19,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.simpledigital"
+    namespace = "com.example.doomguy"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.example.simpledigital"
+        applicationId = "com.example.doomguy"
         minSdk = 33
         targetSdk = 33
         versionCode = 1

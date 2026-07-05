@@ -1,7 +1,7 @@
 name: doomguy
 version: 1.0.0
 description: ""
-watchFaceFormatVersion: 1
+watchFaceFormatVersion: 2
 dependencies:
   xml-preprocessor:
     version: main

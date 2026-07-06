@@ -27,8 +27,26 @@
     <meta-data
         android:name="com.google.android.wearable.standalone"
         android:value="true" />
+
+    <service
+        android:name="com.google.android.wearable.watchface.WatchFaceService"
+        android:exported="true"
+        android:label="@string/watch_face_name"
+        android:permission="android.permission.BIND_WALLPAPER">
+      <intent-filter>
+        <action android:name="android.service.wallpaper.WallpaperService" />
+        <category android:name="com.google.android.wearable.watchface.category.WATCH_FACE" />
+      </intent-filter>
+      <meta-data
+          android:name="android.service.wallpaper"
+          android:resource="@xml/watch_face_info" />
+      <meta-data
+          android:name="com.google.android.wearable.watchface.wearableConfigurationAction"
+          android:value="androidx.wear.watchface.editor.action.WATCH_FACE_EDITOR" />
+    </service>
+
     <property
         android:name="com.google.wear.watchface.format.version"
-        android:value="5" />
+        android:value="2" />
   </application>
 </manifest>

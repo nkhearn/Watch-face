@@ -2,61 +2,59 @@
     <Metadata key="CLOCK_TYPE" value="DIGITAL" />
     <Metadata key="PREVIEW_TIME" value="10:10:46" />
 
+    <Resources>
+        <Bitmap id="doom_healthy" resource="@drawable/doom_healthy" />
+        <Bitmap id="doom_hurt" resource="@drawable/doom_hurt" />
+        <Bitmap id="doom_dying" resource="@drawable/doom_dying" />
+        <Bitmap id="doom_dead" resource="@drawable/doom_dead" />
+    </Resources>
+
     <Scene backgroundColor="#FF000000">
-        <!-- Top: Date -->
+
         <PartText x="0" y="20" width="450" height="60">
             <Text align="CENTER">
                 <Font family="SYNC_TO_DEVICE" size="36" color="#FFE7E7A5">
-                    <Template>%s %s
-                        <Parameter expression="[DAY_S]" />
-                        <Parameter expression="[DAY_1_31]" />
-                    </Template>
+                    <Template>%s %d<Parameter expression="[DAY_WEEK_S]" /><Parameter expression="[DAY_1_31]" /></Template>
                 </Font>
             </Text>
         </PartText>
 
-        <!-- Middle: Time -->
+
         <DigitalClock x="0" y="80" width="450" height="120">
-            <TimeText x="0" y="0" width="450" height="120" format="HH:mm">
+            <TimeText x="0" y="0" width="450" height="120" format="HH:mm" align="CENTER">
                 <Font family="SYNC_TO_DEVICE" size="100" color="#FFD00000" />
             </TimeText>
         </DigitalClock>
 
-        <!-- AM/PM and Seconds -->
-        <PartText x="20" y="110" width="100" height="40">
-            <Text align="START">
-                <Font family="SYNC_TO_DEVICE" size="24" color="#FFD00000">
-                    <Template>%s
-                        <Parameter expression="[AMPM]" />
-                    </Template>
-                </Font>
-            </Text>
-        </PartText>
-        <PartText x="330" y="110" width="100" height="40">
-            <Text align="END">
-                <Font family="SYNC_TO_DEVICE" size="24" color="#FFD00000">
-                    <Template>%s
-                        <Parameter expression="[SEC_Z]" />
-                    </Template>
-                </Font>
-            </Text>
-        </PartText>
 
-        <!-- Bottom Background Blocks -->
-        <!-- Left Block -->
+        <DigitalClock x="20" y="110" width="100" height="40">
+            <TimeText x="0" y="0" width="100" height="40" format="a" align="START">
+                <Font family="SYNC_TO_DEVICE" size="24" color="#FFD00000" />
+            </TimeText>
+        </DigitalClock>
+        <DigitalClock x="330" y="110" width="100" height="40">
+            <TimeText x="0" y="0" width="100" height="40" format="ss" align="END">
+                <Font family="SYNC_TO_DEVICE" size="24" color="#FFD00000" />
+            </TimeText>
+        </DigitalClock>
+
+
+
         <PartDraw x="0" y="200" width="150" height="250">
             <Rectangle x="0" y="0" width="150" height="250">
                 <Fill color="#FF737373" />
             </Rectangle>
         </PartDraw>
-        <!-- Right Block -->
+
         <PartDraw x="300" y="200" width="150" height="250">
             <Rectangle x="0" y="0" width="150" height="250">
                 <Fill color="#FF737373" />
             </Rectangle>
         </PartDraw>
 
-        <!-- Left: Battery -->
+
+
+
         <Group name="BatteryGroup" x="0" y="200" width="150" height="250">
              <PartText x="0" y="20" width="150" height="40">
                 <Text align="CENTER">
@@ -66,13 +64,11 @@
             <PartText x="0" y="60" width="150" height="60">
                 <Text align="CENTER">
                     <Font family="SYNC_TO_DEVICE" size="48" color="#FFD00000">
-                        <Template>%d%%
-                            <Parameter expression="[BATTERY_PERCENT]" />
-                        </Template>
+                        <Template>%d%%<Parameter expression="[BATTERY_PERCENT]" /></Template>
                     </Font>
                 </Text>
             </PartText>
-            <!-- Battery Icon (Simplified Lightning Bolt using Lines) -->
+
             <PartDraw x="60" y="130" width="30" height="30">
                  <Line startX="15" startY="0" endX="30" endY="15">
                     <Stroke color="#FFE7E7A5" thickness="2" />
@@ -95,13 +91,13 @@
             </PartDraw>
         </Group>
 
-        <!-- Center: Doom Guy Face -->
+
         <Group name="DoomGuyGroup" x="150" y="200" width="150" height="250">
             <Condition>
                 <Expressions>
-                    <Expression name="is_healthy">[BATTERY_PERCENT] >= 80</Expression>
-                    <Expression name="is_hurt">[BATTERY_PERCENT] >= 50 &amp;&amp; [BATTERY_PERCENT] &lt; 80</Expression>
-                    <Expression name="is_dying">[BATTERY_PERCENT] >= 20 &amp;&amp; [BATTERY_PERCENT] &lt; 50</Expression>
+                    <Expression name="is_healthy">[BATTERY_PERCENT] &gt;= 80</Expression>
+                    <Expression name="is_hurt">[BATTERY_PERCENT] &gt;= 50 &amp;&amp; [BATTERY_PERCENT] &lt; 80</Expression>
+                    <Expression name="is_dying">[BATTERY_PERCENT] &gt;= 20 &amp;&amp; [BATTERY_PERCENT] &lt; 50</Expression>
                     <Expression name="is_dead">[BATTERY_PERCENT] &lt; 20</Expression>
                 </Expressions>
                 <Compare expression="is_healthy">
@@ -127,7 +123,7 @@
             </Condition>
         </Group>
 
-        <!-- Right: Heart Rate -->
+
         <Group name="HeartRateGroup" x="300" y="200" width="150" height="250">
              <PartText x="0" y="20" width="150" height="40">
                 <Text align="CENTER">
@@ -137,13 +133,11 @@
             <PartText x="0" y="60" width="150" height="60">
                 <Text align="CENTER">
                     <Font family="SYNC_TO_DEVICE" size="48" color="#FFD00000">
-                        <Template>%d
-                            <Parameter expression="[HEART_RATE]" />
-                        </Template>
+                        <Template>%d<Parameter expression="[HEART_RATE]" /></Template>
                     </Font>
                 </Text>
             </PartText>
-            <!-- Heart Icon (Simplified using Rectangles) -->
+
             <PartDraw x="60" y="130" width="30" height="30">
                 <Rectangle x="5" y="5" width="10" height="10">
                     <Fill color="#FFD00000" />

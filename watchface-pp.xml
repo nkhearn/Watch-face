@@ -5,7 +5,8 @@
             "red": "#FFD00000",
             "gold": "#FFE7E7A5",
             "background": "#FF000000",
-            "grey": "#FF737373"
+            "grey": "#FF737373",
+            "light_grey": "#FFC0C0C0"
         }
     </Define>
 
@@ -24,35 +25,43 @@
         <PartText x="0" y="20" width="450" height="60">
             <Text align="CENTER">
                 <Font family="SYNC_TO_DEVICE" size="36" color="{COLORS['gold']}">
-                    [DAY_S] [DAY_1_31]
+                    <Template>%s %d<Parameter expression="[DAY_WEEK_S]" /><Parameter expression="[DAY_1_31]" /></Template>
                 </Font>
             </Text>
         </PartText>
 
         <!-- Middle: Time -->
-        <PartText x="0" y="80" width="450" height="120">
-            <Text align="CENTER">
-                <Font family="SYNC_TO_DEVICE" size="100" color="{COLORS['red']}">
-                    [HOUR_0_23_Z]:[MIN_Z]
-                </Font>
-            </Text>
-        </PartText>
+        <DigitalClock x="0" y="80" width="450" height="120">
+            <TimeText x="0" y="0" width="450" height="120" format="HH:mm" align="CENTER">
+                <Font family="SYNC_TO_DEVICE" size="100" color="{COLORS['red']}" />
+            </TimeText>
+        </DigitalClock>
 
         <!-- AM/PM and Seconds -->
-        <PartText x="20" y="110" width="100" height="40">
-            <Text align="START">
-                <Font family="SYNC_TO_DEVICE" size="24" color="{COLORS['red']}">
-                    [AMPM]
-                </Font>
-            </Text>
-        </PartText>
-        <PartText x="330" y="110" width="100" height="40">
-            <Text align="END">
-                <Font family="SYNC_TO_DEVICE" size="24" color="{COLORS['red']}">
-                    [SEC_Z]
-                </Font>
-            </Text>
-        </PartText>
+        <DigitalClock x="20" y="110" width="100" height="40">
+            <TimeText x="0" y="0" width="100" height="40" format="a" align="START">
+                <Font family="SYNC_TO_DEVICE" size="24" color="{COLORS['red']}" />
+            </TimeText>
+        </DigitalClock>
+        <DigitalClock x="330" y="110" width="100" height="40">
+            <TimeText x="0" y="0" width="100" height="40" format="ss" align="END">
+                <Font family="SYNC_TO_DEVICE" size="24" color="{COLORS['red']}" />
+            </TimeText>
+        </DigitalClock>
+
+        <!-- Bottom Background Blocks -->
+        <!-- Left Block -->
+        <PartDraw x="0" y="200" width="150" height="250">
+            <Rectangle x="0" y="0" width="150" height="250">
+                <Fill color="{COLORS['grey']}" />
+            </Rectangle>
+        </PartDraw>
+        <!-- Right Block -->
+        <PartDraw x="300" y="200" width="150" height="250">
+            <Rectangle x="0" y="0" width="150" height="250">
+                <Fill color="{COLORS['grey']}" />
+            </Rectangle>
+        </PartDraw>
 
         <!-- Bottom: Doom Guy and Complications -->
 
@@ -60,56 +69,63 @@
         <Group name="BatteryGroup" x="0" y="200" width="150" height="250">
              <PartText x="0" y="20" width="150" height="40">
                 <Text align="CENTER">
-                    <Font family="SYNC_TO_DEVICE" size="24" color="{COLORS['grey']}">BAT</Font>
+                    <Font family="SYNC_TO_DEVICE" size="24" color="{COLORS['light_grey']}">BAT</Font>
                 </Text>
             </PartText>
             <PartText x="0" y="60" width="150" height="60">
                 <Text align="CENTER">
-                    <Font family="SYNC_TO_DEVICE" size="48" color="{COLORS['red']}">[BATTERY_PERCENT]</Font>
+                    <Font family="SYNC_TO_DEVICE" size="48" color="{COLORS['red']}">
+                        <Template>%d%%<Parameter expression="[BATTERY_PERCENT]" /></Template>
+                    </Font>
                 </Text>
             </PartText>
+            <!-- Battery Icon (Simplified Lightning Bolt using Lines) -->
+            <PartDraw x="60" y="130" width="30" height="30">
+                 <Line startX="15" startY="0" endX="30" endY="15">
+                    <Stroke color="{COLORS['gold']}" thickness="2" />
+                 </Line>
+                 <Line startX="30" startY="15" endX="15" endY="15">
+                    <Stroke color="{COLORS['gold']}" thickness="2" />
+                 </Line>
+                 <Line startX="15" startY="15" endX="20" endY="30">
+                    <Stroke color="{COLORS['gold']}" thickness="2" />
+                 </Line>
+                 <Line startX="20" startY="30" endX="5" endY="15">
+                    <Stroke color="{COLORS['gold']}" thickness="2" />
+                 </Line>
+                 <Line startX="5" startY="15" endX="15" endY="15">
+                    <Stroke color="{COLORS['gold']}" thickness="2" />
+                 </Line>
+                 <Line startX="15" startY="15" endX="15" endY="0">
+                    <Stroke color="{COLORS['gold']}" thickness="2" />
+                 </Line>
+            </PartDraw>
         </Group>
 
         <!-- Center: Doom Guy Face -->
-        <Group name="DoomGuyFaceGroup" x="150" y="200" width="150" height="250">
-            <!-- 80-100% -->
+        <Group name="DoomGuyGroup" x="150" y="200" width="150" height="250">
             <Condition>
                 <Expressions>
                     <Expression name="is_healthy">[BATTERY_PERCENT] >= 80</Expression>
+                    <Expression name="is_hurt">[BATTERY_PERCENT] >= 50 &amp;&amp; [BATTERY_PERCENT] &lt; 80</Expression>
+                    <Expression name="is_dying">[BATTERY_PERCENT] >= 20 &amp;&amp; [BATTERY_PERCENT] &lt; 50</Expression>
+                    <Expression name="is_dead">[BATTERY_PERCENT] &lt; 20</Expression>
                 </Expressions>
                 <Compare expression="is_healthy">
                     <PartImage x="0" y="20" width="150" height="150">
                         <Image resource="doom_healthy" />
                     </PartImage>
                 </Compare>
-            </Condition>
-            <!-- 50-80% -->
-            <Condition>
-                <Expressions>
-                    <Expression name="is_hurt">[BATTERY_PERCENT] >= 50 &amp;&amp; [BATTERY_PERCENT] &lt; 80</Expression>
-                </Expressions>
                 <Compare expression="is_hurt">
                     <PartImage x="0" y="20" width="150" height="150">
                         <Image resource="doom_hurt" />
                     </PartImage>
                 </Compare>
-            </Condition>
-            <!-- 20-50% -->
-            <Condition>
-                <Expressions>
-                    <Expression name="is_dying">[BATTERY_PERCENT] >= 20 &amp;&amp; [BATTERY_PERCENT] &lt; 50</Expression>
-                </Expressions>
                 <Compare expression="is_dying">
                     <PartImage x="0" y="20" width="150" height="150">
                         <Image resource="doom_dying" />
                     </PartImage>
                 </Compare>
-            </Condition>
-            <!-- 0-20% -->
-            <Condition>
-                <Expressions>
-                    <Expression name="is_dead">[BATTERY_PERCENT] &lt; 20</Expression>
-                </Expressions>
                 <Compare expression="is_dead">
                     <PartImage x="0" y="20" width="150" height="150">
                         <Image resource="doom_dead" />
@@ -122,14 +138,28 @@
         <Group name="HeartRateGroup" x="300" y="200" width="150" height="250">
              <PartText x="0" y="20" width="150" height="40">
                 <Text align="CENTER">
-                    <Font family="SYNC_TO_DEVICE" size="24" color="{COLORS['grey']}">BPM</Font>
+                    <Font family="SYNC_TO_DEVICE" size="24" color="{COLORS['light_grey']}">BPM</Font>
                 </Text>
             </PartText>
             <PartText x="0" y="60" width="150" height="60">
                 <Text align="CENTER">
-                    <Font family="SYNC_TO_DEVICE" size="48" color="{COLORS['red']}">[HEART_RATE]</Font>
+                    <Font family="SYNC_TO_DEVICE" size="48" color="{COLORS['red']}">
+                        <Template>%d<Parameter expression="[HEART_RATE]" /></Template>
+                    </Font>
                 </Text>
             </PartText>
+            <!-- Heart Icon (Simplified using Rectangles) -->
+            <PartDraw x="60" y="130" width="30" height="30">
+                <Rectangle x="5" y="5" width="10" height="10">
+                    <Fill color="{COLORS['red']}" />
+                </Rectangle>
+                <Rectangle x="15" y="5" width="10" height="10">
+                    <Fill color="{COLORS['red']}" />
+                </Rectangle>
+                <Rectangle x="10" y="15" width="10" height="10">
+                    <Fill color="{COLORS['red']}" />
+                </Rectangle>
+            </PartDraw>
         </Group>
 
     </Scene>

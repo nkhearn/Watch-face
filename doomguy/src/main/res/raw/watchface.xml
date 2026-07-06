@@ -7,32 +7,37 @@
         <PartText x="0" y="20" width="450" height="60">
             <Text align="CENTER">
                 <Font family="SYNC_TO_DEVICE" size="36" color="#FFE7E7A5">
-                    [DAY_S] [DAY_1_31]
+                    <Template>%s %s
+                        <Parameter expression="[DAY_S]" />
+                        <Parameter expression="[DAY_1_31]" />
+                    </Template>
                 </Font>
             </Text>
         </PartText>
 
         <!-- Middle: Time -->
-        <PartText x="0" y="80" width="450" height="120">
-            <Text align="CENTER">
-                <Font family="SYNC_TO_DEVICE" size="100" color="#FFD00000">
-                    [HOUR_0_23_Z]:[MIN_Z]
-                </Font>
-            </Text>
-        </PartText>
+        <DigitalClock x="0" y="80" width="450" height="120">
+            <TimeText x="0" y="0" width="450" height="120" format="HH:mm">
+                <Font family="SYNC_TO_DEVICE" size="100" color="#FFD00000" />
+            </TimeText>
+        </DigitalClock>
 
         <!-- AM/PM and Seconds -->
         <PartText x="20" y="110" width="100" height="40">
             <Text align="START">
                 <Font family="SYNC_TO_DEVICE" size="24" color="#FFD00000">
-                    [AMPM]
+                    <Template>%s
+                        <Parameter expression="[AMPM]" />
+                    </Template>
                 </Font>
             </Text>
         </PartText>
         <PartText x="330" y="110" width="100" height="40">
             <Text align="END">
                 <Font family="SYNC_TO_DEVICE" size="24" color="#FFD00000">
-                    [SEC_Z]
+                    <Template>%s
+                        <Parameter expression="[SEC_Z]" />
+                    </Template>
                 </Font>
             </Text>
         </PartText>
@@ -60,7 +65,11 @@
             </PartText>
             <PartText x="0" y="60" width="150" height="60">
                 <Text align="CENTER">
-                    <Font family="SYNC_TO_DEVICE" size="48" color="#FFD00000">[BATTERY_PERCENT]</Font>
+                    <Font family="SYNC_TO_DEVICE" size="48" color="#FFD00000">
+                        <Template>%d%%
+                            <Parameter expression="[BATTERY_PERCENT]" />
+                        </Template>
+                    </Font>
                 </Text>
             </PartText>
             <!-- Battery Icon (Simplified Lightning Bolt using Lines) -->
@@ -127,7 +136,11 @@
             </PartText>
             <PartText x="0" y="60" width="150" height="60">
                 <Text align="CENTER">
-                    <Font family="SYNC_TO_DEVICE" size="48" color="#FFD00000">[HEART_RATE]</Font>
+                    <Font family="SYNC_TO_DEVICE" size="48" color="#FFD00000">
+                        <Template>%d
+                            <Parameter expression="[HEART_RATE]" />
+                        </Template>
+                    </Font>
                 </Text>
             </PartText>
             <!-- Heart Icon (Simplified using Rectangles) -->

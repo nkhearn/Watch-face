@@ -14,7 +14,7 @@
         <PartText x="0" y="20" width="450" height="60">
             <Text align="CENTER">
                 <Font family="SYNC_TO_DEVICE" size="36" color="#FFE7E7A5">
-                    <Template>%s %d<Parameter expression="[DAY_WEEK_S]" /><Parameter expression="[DAY_1_31]" /></Template>
+                    <Template>%s %d<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY_1_31]" /></Template>
                 </Font>
             </Text>
         </PartText>

@@ -34,34 +34,28 @@
         
         <PartDraw x="0" y="200" width="150" height="250">
             <Rectangle x="0" y="0" width="150" height="250">
-                <Fill color="#FF737373" />
+                <LinearGradient 
+                    startX="0" startY="0" 
+                    endX="0" endY="250" 
+                    colors="#FF737373 #FF4A4D4B #FF252927" 
+                    positions="0.0 0.5 1.0" />
             </Rectangle>
             
-            <Rectangle x="10" y="30" width="4" height="4"><Fill color="#88000000"/></Rectangle>
-            <Rectangle x="18" y="30" width="4" height="4"><Fill color="#88000000"/></Rectangle>
-            <Rectangle x="14" y="34" width="4" height="4"><Fill color="#88000000"/></Rectangle>
-            
-            <Rectangle x="50" y="45" width="6" height="4"><Fill color="#66000000"/></Rectangle>
-            <Rectangle x="56" y="49" width="4" height="6"><Fill color="#66000000"/></Rectangle>
-            
-            <Rectangle x="110" y="25" width="4" height="4"><Fill color="#88000000"/></Rectangle>
-            <Rectangle x="118" y="29" width="4" height="4"><Fill color="#88000000"/></Rectangle>
-            
-            <Rectangle x="25" y="85" width="8" height="4"><Fill color="#77000000"/></Rectangle>
-            <Rectangle x="120" y="95" width="4" height="8"><Fill color="#77000000"/></Rectangle>
-            <Rectangle x="8" y="130" width="6" height="6"><Fill color="#88000000"/></Rectangle>
-            
-            <Rectangle x="30" y="180" width="4" height="4"><Fill color="#99000000"/></Rectangle>
-            <Rectangle x="34" y="184" width="4" height="4"><Fill color="#99000000"/></Rectangle>
-            <Rectangle x="38" y="180" width="4" height="4"><Fill color="#99000000"/></Rectangle>
-            
-            <Rectangle x="95" y="210" width="6" height="4"><Fill color="#77000000"/></Rectangle>
-            <Rectangle x="101" y="214" width="4" height="4"><Fill color="#77000000"/></Rectangle>
-            <Rectangle x="125" y="195" width="4" height="4"><Fill color="#88000000"/></Rectangle>
-            <Rectangle x="129" y="199" width="4" height="4"><Fill color="#88000000"/></Rectangle>
+            <Line startX="0" startY="1" endX="150" endY="1">
+                <Stroke color="#FFA5A5A5" thickness="2"/>
+            </Line>
+            <Line startX="1" startY="0" endX="1" endY="250">
+                <Stroke color="#FFA5A5A5" thickness="2"/>
+            </Line>
 
-            <Rectangle x="0" y="244" width="150" height="6"><Fill color="#AA000000"/></Rectangle>
+            <Line startX="0" startY="249" endX="150" endY="249">
+                <Stroke color="#FF121413" thickness="2"/>
+            </Line>
+            <Line startX="149" startY="0" endX="149" endY="250">
+                <Stroke color="#FF121413" thickness="2"/>
+            </Line>
         </PartDraw>
+        
         
         
 

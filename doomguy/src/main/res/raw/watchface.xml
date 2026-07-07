@@ -31,23 +31,38 @@
             </TimeText>
         </DigitalClock>
 
+        
         <PartDraw x="0" y="200" width="150" height="250">
             <Rectangle x="0" y="0" width="150" height="250">
                 <Fill color="#FF737373" />
             </Rectangle>
             
-            <Line startX="10" startY="55" endX="130" endY="57">
-                <Stroke color="#35000000" thickness="3" />
-            </Line>
-
-            <Line startX="20" startY="185" endX="140" endY="184">
-                <Stroke color="#25000000" thickness="6" />
-            </Line>
+            <Rectangle x="10" y="30" width="4" height="4"><Fill color="#88000000"/></Rectangle>
+            <Rectangle x="18" y="30" width="4" height="4"><Fill color="#88000000"/></Rectangle>
+            <Rectangle x="14" y="34" width="4" height="4"><Fill color="#88000000"/></Rectangle>
             
-            <Line startX="115" startY="110" endX="117" endY="125">
-                <Stroke color="#40000000" thickness="2" />
-            </Line>
+            <Rectangle x="50" y="45" width="6" height="4"><Fill color="#66000000"/></Rectangle>
+            <Rectangle x="56" y="49" width="4" height="6"><Fill color="#66000000"/></Rectangle>
+            
+            <Rectangle x="110" y="25" width="4" height="4"><Fill color="#88000000"/></Rectangle>
+            <Rectangle x="118" y="29" width="4" height="4"><Fill color="#88000000"/></Rectangle>
+            
+            <Rectangle x="25" y="85" width="8" height="4"><Fill color="#77000000"/></Rectangle>
+            <Rectangle x="120" y="95" width="4" height="8"><Fill color="#77000000"/></Rectangle>
+            <Rectangle x="8" y="130" width="6" height="6"><Fill color="#88000000"/></Rectangle>
+            
+            <Rectangle x="30" y="180" width="4" height="4"><Fill color="#99000000"/></Rectangle>
+            <Rectangle x="34" y="184" width="4" height="4"><Fill color="#99000000"/></Rectangle>
+            <Rectangle x="38" y="180" width="4" height="4"><Fill color="#99000000"/></Rectangle>
+            
+            <Rectangle x="95" y="210" width="6" height="4"><Fill color="#77000000"/></Rectangle>
+            <Rectangle x="101" y="214" width="4" height="4"><Fill color="#77000000"/></Rectangle>
+            <Rectangle x="125" y="195" width="4" height="4"><Fill color="#88000000"/></Rectangle>
+            <Rectangle x="129" y="199" width="4" height="4"><Fill color="#88000000"/></Rectangle>
+
+            <Rectangle x="0" y="244" width="150" height="6"><Fill color="#AA000000"/></Rectangle>
         </PartDraw>
+        
         
 
         <PartDraw x="300" y="200" width="150" height="250">

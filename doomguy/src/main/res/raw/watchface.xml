@@ -30,12 +30,25 @@
                 <Font family="SYNC_TO_DEVICE" size="24" weight="BOLD" color="#FFD00000" />
             </TimeText>
         </DigitalClock>
-        
+
         <PartDraw x="0" y="200" width="150" height="250">
             <Rectangle x="0" y="0" width="150" height="250">
                 <Fill color="#FF737373" />
             </Rectangle>
+            
+            <Line startX="10" startY="55" endX="130" endY="57">
+                <Stroke color="#35000000" thickness="3" />
+            </Line>
+
+            <Line startX="20" startY="185" endX="140" endY="184">
+                <Stroke color="#25000000" thickness="6" />
+            </Line>
+            
+            <Line startX="115" startY="110" endX="117" endY="125">
+                <Stroke color="#40000000" thickness="2" />
+            </Line>
         </PartDraw>
+        
 
         <PartDraw x="300" y="200" width="150" height="250">
             <Rectangle x="0" y="0" width="150" height="250">

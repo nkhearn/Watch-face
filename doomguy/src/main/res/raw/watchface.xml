@@ -93,27 +93,28 @@
                     <Expression name="is_dead">[BATTERY_PERCENT] &lt; 20</Expression>
                 </Expressions>
                 <Compare expression="is_healthy">
-                    <PartImage x="0" y="20" width="150" height="150">
+                    <PartImage x="6" y="26" width="138" height="138">
                         <Image resource="doom_healthy" />
                     </PartImage>
                 </Compare>
                 <Compare expression="is_hurt">
-                    <PartImage x="0" y="20" width="150" height="150">
+                    <PartImage x="6" y="26" width="138" height="138">
                         <Image resource="doom_hurt" />
                     </PartImage>
                 </Compare>
                 <Compare expression="is_dying">
-                    <PartImage x="0" y="20" width="150" height="150">
+                    <PartImage x="6" y="26" width="138" height="138">
                         <Image resource="doom_dying" />
                     </PartImage>
                 </Compare>
                 <Compare expression="is_dead">
-                    <PartImage x="0" y="20" width="150" height="150">
+                    <PartImage x="6" y="26" width="138" height="138">
                         <Image resource="doom_dead" />
                     </PartImage>
                 </Compare>
             </Condition>
         </Group>
+        
 
 
         <Group name="HeartRateGroup" x="300" y="200" width="150" height="250">

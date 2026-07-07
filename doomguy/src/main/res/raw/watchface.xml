@@ -14,32 +14,23 @@
         <PartText x="0" y="20" width="450" height="60">
             <Text align="CENTER">
                 <Font family="SYNC_TO_DEVICE" size="36" color="#FFE7E7A5">
-                    <Template>%s %d<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY_1_31]" /></Template>
+                    <Template>%s %d<Parameter expression="[DAY_OF_WEEK_S]" /><Parameter expression="[DAY]" /></Template>
                 </Font>
             </Text>
         </PartText>
 
-
         <DigitalClock x="0" y="80" width="450" height="120">
-            <TimeText x="0" y="0" width="450" height="120" format="HH:mm" align="CENTER">
-                <Font family="SYNC_TO_DEVICE" size="100" color="#FFD00000" />
+            <TimeText x="0" y="0" width="450" height="120" format="hh:mm" align="CENTER">
+                <Font family="SYNC_TO_DEVICE" size="100" weight="BOLD" color="#FFD00000" />
             </TimeText>
         </DigitalClock>
-
 
         <DigitalClock x="20" y="110" width="100" height="40">
             <TimeText x="0" y="0" width="100" height="40" format="a" align="START">
-                <Font family="SYNC_TO_DEVICE" size="24" color="#FFD00000" />
+                <Font family="SYNC_TO_DEVICE" size="24" weight="BOLD" color="#FFD00000" />
             </TimeText>
         </DigitalClock>
-        <DigitalClock x="330" y="110" width="100" height="40">
-            <TimeText x="0" y="0" width="100" height="40" format="ss" align="END">
-                <Font family="SYNC_TO_DEVICE" size="24" color="#FFD00000" />
-            </TimeText>
-        </DigitalClock>
-
-
-
+        
         <PartDraw x="0" y="200" width="150" height="250">
             <Rectangle x="0" y="0" width="150" height="250">
                 <Fill color="#FF737373" />
@@ -53,12 +44,13 @@
         </PartDraw>
 
 
-
-
         <Group name="BatteryGroup" x="0" y="200" width="150" height="250">
              <PartText x="0" y="20" width="150" height="40">
                 <Text align="CENTER">
-                    <Font family="SYNC_TO_DEVICE" size="24" color="#FFC0C0C0">BAT</Font>
+                    <Font family="SYNC_TO_DEVICE" size="24" weight="BOLD" color="#FFC0C0C0">
+                        <Shadow radius="2.0" color="#FF000000" offsetX="2.0" offsetY="2.0" />
+                        <Template>BAT</Template>
+                    </Font>
                 </Text>
             </PartText>
             <PartText x="0" y="60" width="150" height="60">
@@ -127,7 +119,10 @@
         <Group name="HeartRateGroup" x="300" y="200" width="150" height="250">
              <PartText x="0" y="20" width="150" height="40">
                 <Text align="CENTER">
-                    <Font family="SYNC_TO_DEVICE" size="24" color="#FFC0C0C0">BPM</Font>
+                    <Font family="SYNC_TO_DEVICE" size="24" weight="BOLD" color="#FFC0C0C0">
+                        <Shadow radius="2.0" color="#FF000000" offsetX="2.0" offsetY="2.0" />
+                        <Template>BPM</Template>
+                    </Font>
                 </Text>
             </PartText>
             <PartText x="0" y="60" width="150" height="60">
@@ -153,3 +148,4 @@
 
     </Scene>
 </WatchFace>
+

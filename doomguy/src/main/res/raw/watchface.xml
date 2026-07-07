@@ -33,54 +33,29 @@
 
         
         
-            <!-- ================= LEFT BACKGROUND PANEL (BATTERY) ================= -->
+                <!-- ================= LEFT BACKGROUND PANEL (BATTERY) ================= -->
         <PartDraw x="0" y="200" width="150" height="250">
-            <!-- 1. Base Slate Gray (The underlying stone) -->
+            <!-- 1. Base Uniform Gray Block -->
             <Rectangle x="0" y="0" width="150" height="250">
-                <Fill color="#FF5A5A5A" />
+                <Fill color="#FF737373" />
             </Rectangle>
-
-            <!-- 2. Heavy Top-Left Grime Stain (Large irregular dark patch) -->
-            <Rectangle x="0" y="0" width="95" height="110">
-                <Fill color="#FF3A3A3A" />
-            </Rectangle>
-            <Rectangle x="0" y="0" width="50" height="65">
-                <Fill color="#FF282828" />
-            </Rectangle>
-
-            <!-- 3. Creeping Bottom-Right Mud/Shadow Stain -->
-            <Rectangle x="35" y="150" width="115" height="100">
-                <Fill color="#FF333333" />
-            </Rectangle>
-            <Rectangle x="75" y="195" width="75" height="55">
-                <Fill color="#FF1F2120" />
-            </Rectangle>
-
-            <!-- 4. Mid-panel Weathered Discoloration -->
-            <Rectangle x="0" y="130" width="60" height="40">
-                <Fill color="#FF444444" />
-            </Rectangle>
-
-            <!-- 5. 3D Micro-Pitting (Classic 90s Engine Texture Grain) -->
-            <!-- Pit Cluster A -->
-            <Rectangle x="20" y="35" width="4" height="4"><Fill color="#FF1A1A1A"/></Rectangle>
-            <Rectangle x="24" y="35" width="4" height="4"><Fill color="#FF8A8A8A"/></Rectangle>
-            <Rectangle x="20" y="39" width="4" height="4"><Fill color="#FF1A1A1A"/></Rectangle>
             
-            <!-- Pit Cluster B -->
-            <Rectangle x="115" y="85" width="4" height="4"><Fill color="#FF1A1A1A"/></Rectangle>
-            <Rectangle x="115" y="89" width="4" height="4"><Fill color="#FF8A8A8A"/></Rectangle>
+            <!-- 2. Inner Light Highlight (Top & Left Edges to catch light) -->
+            <Line startX="1" startY="1" endX="149" endY="1">
+                <Stroke color="#FFA5A5A5" thickness="3" />
+            </Line>
+            <Line startX="1" startY="1" endX="1" endY="249">
+                <Stroke color="#FFA5A5A5" thickness="3" />
+            </Line>
 
-            <!-- Pit Cluster C -->
-            <Rectangle x="15" y="175" width="4" height="4"><Fill color="#FF1A1A1A"/></Rectangle>
-            <Rectangle x="19" y="175" width="4" height="4"><Fill color="#FF8A8A8A"/></Rectangle>
-
-            <!-- 6. Beveled Frame Outer Highlights (Gives the slab thickness) -->
-            <Line startX="0" startY="1" endX="150" endY="1"><Stroke color="#FF8E8E8E" thickness="2"/></Line>
-            <Line startX="1" startY="0" endX="1" endY="250"><Stroke color="#FF8E8E8E" thickness="2"/></Line>
+            <!-- 3. Inner Deep Shadow (Bottom & Right Edges) -->
+            <Line startX="1" startY="248" endX="149" endY="248">
+                <Stroke color="#FF222222" thickness="3" />
+            </Line>
+            <Line startX="148" startY="1" endX="148" endY="249">
+                <Stroke color="#FF222222" thickness="3" />
+            </Line>
         </PartDraw>
-        
-        
         
         
         

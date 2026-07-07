@@ -32,28 +32,27 @@
         </DigitalClock>
 
         
+        
         <PartDraw x="0" y="200" width="150" height="250">
             <Rectangle x="0" y="0" width="150" height="250">
-                <LinearGradient 
-                    startX="0" startY="0" 
-                    endX="0" endY="250" 
-                    colors="#FF737373 #FF4A4D4B #FF252927" 
-                    positions="0.0 0.5 1.0" />
+                <Fill color="#FF252525" />
+            </Rectangle>
+
+            <Rectangle x="0" y="4" width="146" height="242">
+                <Fill color="#FF666666" />
             </Rectangle>
             
-            <Line startX="0" startY="1" endX="150" endY="1">
-                <Stroke color="#FFA5A5A5" thickness="2"/>
-            </Line>
-            <Line startX="1" startY="0" endX="1" endY="250">
-                <Stroke color="#FFA5A5A5" thickness="2"/>
+            <Line startX="4" startY="8" endX="140" endY="8">
+                <Stroke color="#FFA0A0A0" thickness="2"/>
             </Line>
 
-            <Line startX="0" startY="249" endX="150" endY="249">
-                <Stroke color="#FF121413" thickness="2"/>
+            <Line startX="0" startY="140" endX="146" endY="142">
+                <Stroke color="#FF151515" thickness="3"/>
             </Line>
-            <Line startX="149" startY="0" endX="149" endY="250">
-                <Stroke color="#FF121413" thickness="2"/>
-            </Line>
+
+            <Rectangle x="0" y="240" width="146" height="6">
+                <Fill color="#FF333333" />
+            </Rectangle>
         </PartDraw>
         
         
